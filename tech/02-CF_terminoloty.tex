@@ -163,6 +163,75 @@ There 2 two main acquisition methods:
     \item \textbf{Live:} The system is running and it's needed to deal with volatile data like RAM, network connections, or running processes.
 \end{itemize} 
 
+\subsubsection{Static acquisition}
+\begin{enumerate}
+    \item shut them down carefully to avoid losing data \\
+    • e.g. for encrypted devices, consider methods for capturing data without triggering loss of access (e.g., before the decryption key is wiped from RAM)
+    \item attach the device to a forensic workstation using a write blocker
+    \item use forensic imaging tools to create a complete image of the storage device
+    \item generate a hash value (e.g., SHA-256) of the original media before and after acquisition to verify integrity
+    \item store the image on a secure forensic storage device
+\end{enumerate}
+\textbf{hint:} pay attention that data is properly hashed and verified post-acquisition, not perform steps like an automata.
+
+\subsubsection{Live acquisition}
+\begin{enumerate}
+    \item choose a method that minimizes system interference while capturing volatile data
+    \item dump RAM (memory acquisition) and capture data from running processes or network connections.
+    \item perform network traffic capture
+    \item document all acquisition actions and steps to ensure chain of custody and admissibility
+    \item hash the volatile data wherever possible to maintain data integrity
+\end{enumerate}
+
+\subsubsection{Integrity}
+In this phase is needed to ensure that the acquired data is an exact replica of the original and has not been altered. \\ Performed mainly by the use of hashing algorithms. \\ Some general steps are: 
+\begin{itemize}[itemsep=0pt]
+    \item choose a method that minimizes system interference while generating a hash (MD5, SHA-256) of the acquired image or data dump
+    \item compare the hash value to the original data hash (for static data) to verify its integrity
+    \item document the hashing process, including the algorithms used and the results, in the chain of custody documentation
+\end{itemize} 
+\textbf{hint:} be careful! any discrepancies in hash values would require re-acquisition and could damage the credibility of the evidence
+
+\subsubsection{Chain of custody}
+This section need to be performed in paralled with all the other phases to ensure a complete, documented chain of custody for the evidence throughout the acquisition process. (Record every step in the acquisition process, including personnel involved, tools used, date, and time of acquisition. \\ Store the data and evidence securely to avoid unauthorized access or tampering)
 
 \subsection{Evaluation}
+analyzing, verifying, and validating the evidence to ensure it remains unaltered and trustworthy for legal proceedings or further analysis. It's possible alter the evidence only if the evaluation is performed on a copy of the original data. \\
+More in practice, the main actions that are performed are:
+\begin{itemize}[itemsep=0pt]
+    \item timestamp and metadata analysis
+    \begin{itemize}
+        \item verify file creation, access, and modification dates of data to ensure they match the timeline of the incident
+    \end{itemize}
+    \item timeline reconstruction
+    \item cross-reference analysis/consistency verification
+    \begin{itemize}
+        \item correlation of digital evidences with external logs or other data to countercheck it is related to the suspected system or device
+    \item comparison of data from different sources (e.g. logs, email)
+    \end{itemize}
+    \item compliancy with current legal/internal standards
+    \begin{itemize}
+        \item collection, preservation, evaluation must be coherent to applicable legal procedures...and the documentation must keep track of that
+    \end{itemize}
+    \item review of possible anti-forensics techniques
+\end{itemize}
 
+\subsection{Presentation}
+Preparing and presenting the findings of the investigation in a clear, accurate, and legally admissible manner is essential. The goal is to \textbf{translate} the technical details of the forensic analysis into a format that can be understood by \textbf{non-technical stakeholders}, such as lawyers, judges, or company executives.
+
+\textbf{Hint:} The quality and clarity of the presentation can significantly influence the outcome of legal proceedings or internal investigations.
+
+\subsection*{Actions:}
+\begin{itemize}[itemsep=0pt]
+    \item Review all the data collected, analyzed, and interpreted during the investigation.
+    \item Identify the key pieces of evidence.
+    \item Verify that all conclusions are directly correlated to verifiable evidence.
+    \item Document the entire forensic process in a formal report, free from technical jargon, so that it can be submitted as legal evidence.
+    \item Securely manage the report to ensure its integrity.
+\end{itemize}
+
+\subsection*{Hints:}
+\begin{itemize}[itemsep=0pt]
+    \item Avoid "personal interpretation" unless explicitly asked to provide expert opinion.
+    \item Include appendices with timestamps, metadata, hash values, and other forms of technical evidence as "reinforcement."
+\end{itemize}
