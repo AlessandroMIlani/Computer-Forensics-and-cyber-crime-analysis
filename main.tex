@@ -1,0 +1,59 @@
+\documentclass[12pt]{report}
+\usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\title{Computer Forensics and Cyber Crime Analysis}
+\author{Alessandro Milani}
+\date{\today}
+
+
+\tcbset{
+    sharp corners,
+    colback = white,
+    before skip = 0.2cm,    % add extra space before the box
+    after skip = 0.5cm      % add extra space after the box
+}                           % setting global options for tcolorbox
+ 
+\definecolor{main}{HTML}{5989cf}    % setting main color to be used
+\definecolor{sub}{HTML}{cde4ff}     % setting sub color to be used
+ 
+\newtcolorbox{boxH}{
+    colback = sub, 
+    colframe = main, 
+    boxrule = 0pt, 
+    leftrule = 6pt % left rule weight
+}
+ 
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\part{Legal}
+\input{legal/01-introduction}
+\input{legal/02-Definition}
+
+\part{Tech}
+\input{tech/01-introduction}
+\input{tech/02-CF_terminoloty}
+% Add more sections as needed
+
+\end{document}
+
+% Sample of a centered image in LaTeX
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{path/to/image.png}
+%     \caption{Sample Image}
+%     \label{fig:sample_image}
+% \end{figure}

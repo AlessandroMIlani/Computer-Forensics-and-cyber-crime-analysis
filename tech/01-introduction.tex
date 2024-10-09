@@ -1,0 +1,97 @@
+\chapter{Introduction}
+
+\section{Topics}
+\begin{itemize}
+    \item \textbf{Forensics Analysis} \\
+        use of logic and meaningful knowledge and methodological approach to 
+        legal problems and criminal investigation.
+    \item \textbf{Computer Forensics} \\
+        Collection, preservation and analysis of digital evidence 
+        (inside file system, email, cloud account etc...) to support 
+        investigation and legal proceedings
+\end{itemize}
+
+\section{Forensics History}
+
+\subsection{Ancient Times}
+Forensic science dates back to \textbf{Babylon (1900 BC)} where fingerprints 
+were used for identification, and \textbf{China (1248 AC)} with forensic pathology.
+ In the \textbf{UK (1835)}, bullet comparison solved a case, and by \textbf{1892}, 
+ the first murder was solved using fingerprints.
+
+\subsection{Modern Times}
+Forensic standards grew in police departments, with the first crime lab in 
+\textbf{1923}. DNA fingerprinting began in the \textbf{1950s}, and DNA profiling
+ was developed by \textbf{1985}. \textbf{AFIS} systems emerged in the late 
+ \textbf{1980s}. Today, AI, toxicology, and digital forensics are key areas 
+ of innovation.
+
+\subsection{Digital Field}
+
+\subsubsection{Early Times}
+In \textbf{1989}, Robert Morris was convicted under the Computer Fraud and 
+Abuse Act, marking the first use of computer logs in forensics. That year, 
+\textbf{IACIS} was founded, followed by \textbf{IOCE} in \textbf{1995} to 
+share digital forensic practices.
+
+\subsubsection{Recent Times}
+\begin{itemize}
+    \item \textbf{1990}: Forensic tools like EnCase emerged
+    \item \textbf{2000}: Digital forensics became widespread in law enforcement
+    \item \textbf{2010}: Growth of cloud and mobile forensics, automation, and 
+    machine learning
+    \item \textbf{2020}: Advances in crypto, blockchain, and AI improve digital 
+    forensics
+\end{itemize}
+
+\section{Computer Forensics Definitions}
+
+\textbf{US\_CERT:} The discipline that combines elements of law and computer 
+science to collect and analyze data from computer systems, 
+networks, wireless communications, and storage devices in a 
+way that is admissible as evidence in a court of law. \\
+\textbf{A. Ghirardini -Computer Forensics:} The discipline whose goal is preservation, identification, analysis of 
+information system to the aim of identification of evidences during 
+investigation activities. \\
+\textbf{NIST glossary:} The application of computer science and investigative procedures 
+involving the examination of digital evidence - following proper search 
+authority, chain of custody, validation with mathematics, use of validated 
+tools, repeatability, reporting, and possibly expert testimony.
+
+\section{CF purpose(s)}
+
+\subsection{CF Q\&A}
+During an investigation, digital forensics need to analysis data to answer some key questions: \\
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}
+    \item \textbf{What happened?}
+    \item \textbf{Who was involved?}
+    \item \textbf{When did it take place?}
+\end{itemize}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}
+    \item \textbf{Where did it take place?}
+    \item \textbf{Why did it take place?}
+    \item \textbf{How did an incident occur?} \newline
+\end{itemize}
+\end{minipage} 
+
+The answers to these questions are essential for support legal proceedings and mitigate 
+possibility of future incidents with a preventive approach.
+
+\subsection{CF Goals}
+
+The goals of computer forensics (CF) are multifaceted and aim to provide a
+comprehensive understanding of digital incidents. \\
+Firstly, CF seeks to retrieve what has been the input, such as what has been typed. 
+It also aims to determine the actions performed, for example, what programs have been run 
+and what peripherals have been connected. \\
+Additionally, CF involves analyzing used files to understand what modifications 
+have been done and when these modifications occurred (and the information from an OS 
+are not enougth, because are an abstraction managed by the file system $\rightarrow$ needed 
+bit analysis (like for ereased data)). \\ 
+Another critical goal is to identify the damage done, 
+such as what data have been erased. In essence, the overarching goal 
+of CF is to \textbf{gain a technical comprehension of what happened during the 
+incident} (from a technical point of view).
