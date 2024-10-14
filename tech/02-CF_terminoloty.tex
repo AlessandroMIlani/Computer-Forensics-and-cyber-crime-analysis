@@ -5,90 +5,86 @@
 \subsection{Digital evidence}
 Technical definition of Digital evidence is very similar to the legal ones:
 \begin{boxH}
-    Data stored or transmitted in digital form that can be used in court.
+  Data stored or transmitted in digital form that can be used in court.
 \end{boxH}
- 
-The conrnerstones of digital forensics are the different levels of \textbf{abstraction}, requires 
-\textbf{interpretation}, are \textbf{fragile}, may be \textbf{voluminous} 
+
+The conrnerstones of digital forensics are the different levels of \textbf{abstraction}, requires
+\textbf{interpretation}, are \textbf{fragile}, may be \textbf{voluminous}
 and the difficulty to discover \textbf{connection} between
 data and reality (the connection need to be done beafore entering the court). \\
 
-Digital evidence also requires a deep technical understanding of the possible types of data 
-(files, emails, logs, metadata) and the legal requiremnets for each of one to collect and preserve it. 
-(To make all of this effective, knowledge of file systems, network protocols 
+Digital evidence also requires a deep technical understanding of the possible types of data
+(files, emails, logs, metadata) and the legal requiremnets for each of one to collect and preserve it.
+(To make all of this effective, knowledge of file systems, network protocols
 and encryption are essential) \\
-
 
 \subsection{Chain of custody}
 \begin{boxH}
-    Documented and \textbf{unbroken} process of handling evidence 
-    from the time it is collected until it is presented in court
+  Documented and \textbf{unbroken} process of handling evidence
+  from the time it is collected until it is presented in court
 \end{boxH}
 
-This procedure is essential to ensure the integrity of the evidence and to avoid 
+This procedure is essential to ensure the integrity of the evidence and to avoid
 that them to be tampered or accessed by unauthorized people. \\
-Keep the chain of custody requires knowledge about how to document evidence 
+Keep the chain of custody requires knowledge about how to document evidence
 collection, storage, and access (logging procedures, secure storage, legal prtocols etc..) \\
 
 If the chain of custody is \textbf{broken}, the evidence may be considered \textbf{inadmissible in court}
-(so is needed know the regulation of the state to decide how to manage it). 
+(so is needed know the regulation of the state to decide how to manage it).
 
 \subsection{Data acuisition}
 \begin{boxH}
-    The process of collecting digital evidence from devices  
-    without altering or damaging the original data.
+  The process of collecting digital evidence from devices
+  without altering or damaging the original data.
 \end{boxH}
 
 One of the biggest problem fo the managment of digital evidence, because it's needed to be performed
 on hostile systems (that can be infected, compromised, have a malware or system to avoid copy
 like edited system call for make other program to fail). in a not coltrolled envorment like a crime scene. \\
-So are needed knowledge of disk imaging and live data capture in order to not alter what's going on 
-on the suspect system. Are also required expertise in forensics acquisition, analysis 
-tools (like FTK Imager, EnCase) and knowledge of file systems, write-blockers, and hashing 
+So are needed knowledge of disk imaging and live data capture in order to not alter what's going on
+on the suspect system. Are also required expertise in forensics acquisition, analysis
+tools (like FTK Imager, EnCase) and knowledge of file systems, write-blockers, and hashing
 (crucial for ensuring integrity).
-
 
 \subsection{Hashing}
 \begin{boxH}
-    The process of converting data into a fixed-length string of 
-    bits, which represents the data uniquely
+  The process of converting data into a fixed-length string of
+  bits, which represents the data uniquely
 \end{boxH}
 
 It's used in the chain of custody for ensure the integrity of the digital evidence and so verity
 that a file has not been altered. \\
-Require understanding of hashing algorithms (strengths and 
-weaknesses, e.g. MD5 collision), formats 
+Require understanding of hashing algorithms (strengths and
+weaknesses, e.g. MD5 collision), formats
 (hex, base64 etc...) (if wrong formats are sued, the chain of custody is broken and each information
-gathered from that point is considered not valid) 
+gathered from that point is considered not valid)
 and expertise in hashing tools (sha256sum, hashdeep, FTK imager, Autopsy). \\
 
 Have to be used any time an evidence is "managed" (copied, moved)
 
-
 \subsection{Write Blocker}
 \begin{boxH}
-    Hardware or software tool used to prevent any data from 
-being written to a storage device during analysis, preserving 
-the original data content
+  Hardware or software tool used to prevent any data from
+  being written to a storage device during analysis, preserving
+  the original data content
 \end{boxH}
 
-To be operated, require understanding of how write-blocking devices work 
-and how they can be implemented in forensic procedures. \\ 
+To be operated, require understanding of how write-blocking devices work
+and how they can be implemented in forensic procedures. \\
 
 It's essential for the legally defensible acquisition.
-
 
 \subsection{Forensic image}
 
 \begin{boxH}
-    A bit-by-bit copy of digital media, including deleted files and 
-    data in slack space, which is an exact replica of the original device
+  A bit-by-bit copy of digital media, including deleted files and
+  data in slack space, which is an exact replica of the original device
 \end{boxH}
 
 The goal of a forensic image is to preserve the original evidence and aovid the modification
 of the original data. \\
 
-To be performed in a correct way, requires understanding of mechanisms to copy information 
+To be performed in a correct way, requires understanding of mechanisms to copy information
 in digital devices (file system knowledge and behavior) and familiarity with  with bit-by-bit copy tools
 (DD, FTK Imager, EnCase, Guymager). \\
 
@@ -97,11 +93,11 @@ As the hashing, it's need to be used any time an evicene is "managed" (copied, m
 \section{Scenarios}
 There are some possible scenario that a computer forensic investigator can face:
 \begin{itemize}[itemsep=0pt]
-    \item Internet abuse from employee
-    \item computer-aided frauds
-    \item Data unauthorized manupulation (theft or destruction)
-    \item Computer/network manage assessment
-    \item \dots any other case that include digital evidence
+  \item Internet abuse from employee
+  \item computer-aided frauds
+  \item Data unauthorized manupulation (theft or destruction)
+  \item Computer/network manage assessment
+  \item \dots any other case that include digital evidence
 \end{itemize}
 
 \section{investigation phases}
@@ -111,30 +107,30 @@ A Computer forensics investigatos usually follow standard phases that guide him.
 \subsection{Phases}
 
 \begin{itemize}[itemsep=0pt]
-    \item \textbf{identification:} When the investigator come for the first time to the crime scene and need to identify potential source of relevant digital evicences. 
-    
-    \item \textbf{collection:} The letteral pick up of the evidence (like a computer or a smartphone) or a remote taking possession of the evidence (like for a remote server) and its connection (e.g. network or physical, like USB disk). \\ It's splitted from acquisition because it's a critical phase where the evidence can be altered and lost utility for the investigation (es. data corruption, lost of metadata etc...)
-    
-    \item \textbf{acquisition:} Electronically retrieving data by running various CF tools and software suites
-    
-    \item \textbf{evaluation:} Evaluating the data recovered to determine if and how it could be used against the suspect (e.g. for prosecution in court)
-    
-    \item \textbf{presentation:} Presenting the evidence discovered in a manner which is suitable for lawyers, non-technical staff/management and the law (and internal rules)
+  \item \textbf{identification:} When the investigator come for the first time to the crime scene and need to identify potential source of relevant digital evicences.
+
+  \item \textbf{collection:} The letteral pick up of the evidence (like a computer or a smartphone) or a remote taking possession of the evidence (like for a remote server) and its connection (e.g. network or physical, like USB disk). \\ It's splitted from acquisition because it's a critical phase where the evidence can be altered and lost utility for the investigation (es. data corruption, lost of metadata etc...)
+
+  \item \textbf{acquisition:} Electronically retrieving data by running various CF tools and software suites
+
+  \item \textbf{evaluation:} Evaluating the data recovered to determine if and how it could be used against the suspect (e.g. for prosecution in court)
+
+  \item \textbf{presentation:} Presenting the evidence discovered in a manner which is suitable for lawyers, non-technical staff/management and the law (and internal rules)
 \end{itemize}
 
 \subsection{Identification}
-During the identification phase is important \textbf{recognize} all the \textbf{relevant data sources} before any acquisition, even if no physical present, like data in the cloud \\ A imple \textbf{list of example} are: hard drives (HDD/SSD), memory (RAM), mobile devices (smartphones, tablets), cloud storage, network traffic, removable media (USB drives, DVDs), IoT devices and embedded systems (like smart washing machines) \\ 
+During the identification phase is important \textbf{recognize} all the \textbf{relevant data sources} before any acquisition, even if no physical present, like data in the cloud \\ A imple \textbf{list of example} are: hard drives (HDD/SSD), memory (RAM), mobile devices (smartphones, tablets), cloud storage, network traffic, removable media (USB drives, DVDs), IoT devices and embedded systems (like smart washing machines) \\
 \bigskip For identify these sourcer, the investigator can perform some actions, like:
 \begin{itemize}[itemsep=0pt]
 
-    \item Perform an initial survey of the scene (physical or network environment)
-    
-    \item Identify key devices and data locations (local storage, remote servers, cloud services)
-    
-    \item Check for connected devices, including peripherals like printers, removable media, or network-attached devices
-    
-    \item Map all potential data sources using network topology diagrams or asset inventories
-    
+  \item Perform an initial survey of the scene (physical or network environment)
+
+  \item Identify key devices and data locations (local storage, remote servers, cloud services)
+
+  \item Check for connected devices, including peripherals like printers, removable media, or network-attached devices
+
+  \item Map all potential data sources using network topology diagrams or asset inventories
+
 \end{itemize}
 
 A particolar aspect that need to be considered is the possible present of "ephemeral" storage or data, like cloud syncing, hidden secttor, tmp, dat in ram etc...
@@ -147,49 +143,48 @@ A particular note is for the managment of live systems where is needed ensure ev
 maintaining system uptime (so not shoutting down the system for avoid the loss of volatile data). \\
 Create a \textbf{detailed record} of the condition and state of the evidence
 \begin{itemize}[itemsep=0pt]
-    \item take photographs of the devices in situ, including connected peripherals and the physical state
-    \item  record serial numbers, device models, and any other identifiable information
-    \item  document the scene, noting which devices were running, whether screens were active o locked, and any other visible indicators
+  \item take photographs of the devices in situ, including connected peripherals and the physical state
+  \item  record serial numbers, device models, and any other identifiable information
+  \item  document the scene, noting which devices were running, whether screens were active o locked, and any other visible indicators
 \end{itemize}
 \textbf{hint:} complete documentation is crucial to prevent legal challenges regarding the integrity of the evidence. \\
 Beafore procede to the acquisition, is needed to ensuring no alteration will take place, so do somethings like enable write blockers for physical storage devices, disalbe connection and sinking. particulary complex is maintain  integrity on live systems (e.g., using remote collection methods that minimize data alteration risks)
-
 
 \subsection{Acquisition}
 The act of performing a forensic copy (so a bit-by-bit copy) of the original data with the goal of ensure that the acquired data is a faithful replica of the source so to maintaining data integrity. \\
 There 2 two main acquisition methods:
 \begin{itemize}
-    \item \textbf{Static:} When the system is powered down, it's se most commod method for acquiring data from hard drives and extenral memory
-    \item \textbf{Live:} The system is running and it's needed to deal with volatile data like RAM, network connections, or running processes.
-\end{itemize} 
+  \item \textbf{Static:} When the system is powered down, it's se most commod method for acquiring data from hard drives and extenral memory
+  \item \textbf{Live:} The system is running and it's needed to deal with volatile data like RAM, network connections, or running processes.
+\end{itemize}
 
 \subsubsection{Static acquisition}
 \begin{enumerate}
-    \item shut them down carefully to avoid losing data \\
+  \item shut them down carefully to avoid losing data \\
     • e.g. for encrypted devices, consider methods for capturing data without triggering loss of access (e.g., before the decryption key is wiped from RAM)
-    \item attach the device to a forensic workstation using a write blocker
-    \item use forensic imaging tools to create a complete image of the storage device
-    \item generate a hash value (e.g., SHA-256) of the original media before and after acquisition to verify integrity
-    \item store the image on a secure forensic storage device
+  \item attach the device to a forensic workstation using a write blocker
+  \item use forensic imaging tools to create a complete image of the storage device
+  \item generate a hash value (e.g., SHA-256) of the original media before and after acquisition to verify integrity
+  \item store the image on a secure forensic storage device
 \end{enumerate}
 \textbf{hint:} pay attention that data is properly hashed and verified post-acquisition, not perform steps like an automata.
 
 \subsubsection{Live acquisition}
 \begin{enumerate}
-    \item choose a method that minimizes system interference while capturing volatile data
-    \item dump RAM (memory acquisition) and capture data from running processes or network connections.
-    \item perform network traffic capture
-    \item document all acquisition actions and steps to ensure chain of custody and admissibility
-    \item hash the volatile data wherever possible to maintain data integrity
+  \item choose a method that minimizes system interference while capturing volatile data
+  \item dump RAM (memory acquisition) and capture data from running processes or network connections.
+  \item perform network traffic capture
+  \item document all acquisition actions and steps to ensure chain of custody and admissibility
+  \item hash the volatile data wherever possible to maintain data integrity
 \end{enumerate}
 
 \subsubsection{Integrity}
-In this phase is needed to ensure that the acquired data is an exact replica of the original and has not been altered. \\ Performed mainly by the use of hashing algorithms. \\ Some general steps are: 
+In this phase is needed to ensure that the acquired data is an exact replica of the original and has not been altered. \\ Performed mainly by the use of hashing algorithms. \\ Some general steps are:
 \begin{itemize}[itemsep=0pt]
-    \item choose a method that minimizes system interference while generating a hash (MD5, SHA-256) of the acquired image or data dump
-    \item compare the hash value to the original data hash (for static data) to verify its integrity
-    \item document the hashing process, including the algorithms used and the results, in the chain of custody documentation
-\end{itemize} 
+  \item choose a method that minimizes system interference while generating a hash (MD5, SHA-256) of the acquired image or data dump
+  \item compare the hash value to the original data hash (for static data) to verify its integrity
+  \item document the hashing process, including the algorithms used and the results, in the chain of custody documentation
+\end{itemize}
 \textbf{hint:} be careful! any discrepancies in hash values would require re-acquisition and could damage the credibility of the evidence
 
 \subsubsection{Chain of custody}
@@ -199,21 +194,21 @@ This section need to be performed in paralled with all the other phases to ensur
 analyzing, verifying, and validating the evidence to ensure it remains unaltered and trustworthy for legal proceedings or further analysis. It's possible alter the evidence only if the evaluation is performed on a copy of the original data. \\
 More in practice, the main actions that are performed are:
 \begin{itemize}[itemsep=0pt]
-    \item timestamp and metadata analysis
+  \item timestamp and metadata analysis
     \begin{itemize}
-        \item verify file creation, access, and modification dates of data to ensure they match the timeline of the incident
+      \item verify file creation, access, and modification dates of data to ensure they match the timeline of the incident
     \end{itemize}
-    \item timeline reconstruction
-    \item cross-reference analysis/consistency verification
+  \item timeline reconstruction
+  \item cross-reference analysis/consistency verification
     \begin{itemize}
-        \item correlation of digital evidences with external logs or other data to countercheck it is related to the suspected system or device
-    \item comparison of data from different sources (e.g. logs, email)
+      \item correlation of digital evidences with external logs or other data to countercheck it is related to the suspected system or device
+      \item comparison of data from different sources (e.g. logs, email)
     \end{itemize}
-    \item compliancy with current legal/internal standards
+  \item compliancy with current legal/internal standards
     \begin{itemize}
-        \item collection, preservation, evaluation must be coherent to applicable legal procedures...and the documentation must keep track of that
+      \item collection, preservation, evaluation must be coherent to applicable legal procedures...and the documentation must keep track of that
     \end{itemize}
-    \item review of possible anti-forensics techniques
+  \item review of possible anti-forensics techniques
 \end{itemize}
 
 \subsection{Presentation}
@@ -223,15 +218,15 @@ Preparing and presenting the findings of the investigation in a clear, accurate,
 
 \subsection*{Actions:}
 \begin{itemize}[itemsep=0pt]
-    \item Review all the data collected, analyzed, and interpreted during the investigation.
-    \item Identify the key pieces of evidence.
-    \item Verify that all conclusions are directly correlated to verifiable evidence.
-    \item Document the entire forensic process in a formal report, free from technical jargon, so that it can be submitted as legal evidence.
-    \item Securely manage the report to ensure its integrity.
+  \item Review all the data collected, analyzed, and interpreted during the investigation.
+  \item Identify the key pieces of evidence.
+  \item Verify that all conclusions are directly correlated to verifiable evidence.
+  \item Document the entire forensic process in a formal report, free from technical jargon, so that it can be submitted as legal evidence.
+  \item Securely manage the report to ensure its integrity.
 \end{itemize}
 
 \subsection*{Hints:}
 \begin{itemize}[itemsep=0pt]
-    \item Avoid "personal interpretation" unless explicitly asked to provide expert opinion.
-    \item Include appendices with timestamps, metadata, hash values, and other forms of technical evidence as "reinforcement."
+  \item Avoid "personal interpretation" unless explicitly asked to provide expert opinion.
+  \item Include appendices with timestamps, metadata, hash values, and other forms of technical evidence as "reinforcement."
 \end{itemize}
