@@ -1,0 +1,129 @@
+\chapter{network forensics}
+
+Network forensics involves monitoring and analyzing network traffic to detect suspicious behaviors, such as unauthorized access or data exfiltration. Encryption and obfuscation techniques often pose challenges for deep-packet analysis.
+
+\paragraph{Key Points}
+\begin{itemize}
+    \item \textbf{Packet Capture (PCAP):} Captures network packets for communication analysis.
+    \item \textbf{Log Analysis:} Investigates network device logs to reconstruct potential malicious activities.
+\end{itemize}
+
+\paragraph{Tools}
+\begin{itemize}
+    \item \textbf{Wireshark:} Used for detailed packet analysis.
+    \item \textbf{Nmap:} Performs port scanning to identify open services.
+    \item \textbf{Xplico:} Analyzes application-layer traffic.
+    \item \textbf{NetworkMiner:} Extracts files and metadata from captured network flows of packets.
+\end{itemize}
+
+\section{Evidence Identification}
+Digital footprints and online behaviors of individuals or organizations involved in the investigation:
+\begin{itemize}
+    \item \textbf{Identification of Sources} include social media profiles, email addresses, domain names, IP addresses, and public repositories.
+    \item \textbf{Locale specific evidence} like accounts related to suspect or the victim, aliases, or associated identities.
+    \item eveals related accounts, aliases, or associated online identities that may not have been immediately apparent
+\end{itemize}
+
+\section{Evidence Collection}
+Gathering information without altering its integrity is critical, and OSINT may be used as a supplement to digital forensic data collection:
+\begin{itemize}
+    \item Publicly available sources like archived snapshots (e.g., Wayback Machine) and domain registration details.
+    \item Collects digital communications or posts from public forums or social media.
+    \item Metadata, IP histories, and timestamps support timeline construction and activity verification.
+\end{itemize}
+
+\section{Data Preservation}
+Evidence must remain in its original state, ready for a possible court use:
+\begin{itemize}
+    \item Preservation techniques include screenshots, web archives, metadata retrieval and all publicly available information.
+    \begin{itemize}
+        \item Adaption of Tools can generate defensible evidence snapshots (included metadata) for future verification is essential.
+    \end{itemize}
+\end{itemize}
+
+\section{Analysis}
+The analysis phase in network forensics is crucial for uncovering relationships, identifying patterns, reconstructing timelines, and establishing evidence connections. This process leverages a variety of techniques and data sources to enhance the investigative outcome.
+
+\begin{itemize}
+\item \textbf{Relationship and Pattern Examination}
+    \begin{itemize}
+        \item Analyze relationships between individuals, domains, IP addresses, or other entities.
+        \item Correlate shared activities, posts, or affiliations to establish connections.
+        \item Use social network analysis to map interactions, aiding the identification of assets and third-party involvement in the case.
+    \end{itemize}
+
+\item \textbf{Origin Tracing}
+    \begin{itemize}
+        \item Trace the origins of emails, messages, or other digital artifacts to uncover their source.
+        \item Support analysis of attack vectors and potential leak points
+    \end{itemize}
+
+\item origin of digital incidents (through correlation of username, profiles, IPs and known hacker groups)
+\end{itemize}
+
+\section{Report}
+The reporting phase is essential to present forensic findings in a clear, comprehensive, and defensible manner.
+
+\begin{itemize}
+    \item incorporate attributable public information that helps to reinforce forensic findings
+    \item  incorporates OSINT reports or visualizations to make connections and patterns clearer to readers. (e.g. network maps, timelines)
+    \item  OSINT sources allow for verification of online evidence, making the final report thorough and defensible.
+\end{itemize}
+
+\section{OSINT (Open Source Intelligence)}
+\subsection{Contextual Information}
+\begin{itemize}
+    \item \textbf{IP Addresses:} Geolocate users or servers (e.g., IPinfo, ip-api.com, MaxMind GeoIP). Ff the criminal is skilled can hide behind VPNs/proxies/tor, but not all the criminals are competent, so sometimes the IP address can be a good starting point. (tools e.g. IPinfo, ip-api.com, MaxMind GeoIP)
+    \item \textbf{ISP and organizational data:} Conduct WHOIS lookups for IP ownership details. In this way we can undertest to who ask further details. \\ This system not work for cloud forensics, becasue all the ip info are obv connect to the provider info (like AWS), so in that case is necessary the collaboration of the provider. (tools e.g. \href{https://apps.db.ripe.net/db-web-ui/query?bflag=false&dflag=false&rflag=true&searchtext=130.192.0.0%2F16&source=RIPE}{RIPE NCC})
+    \item \textbf{Domain Exploration:} Use reverse DNS lookups to identify domains associated with IP. CAn be usefull to reveal related websites, services, subdomains (… and possible different purposes) (tools e.g., DNSDumpster, Shodan).
+\end{itemize}
+
+\subsection{Service Detection}
+\begin{itemize}
+    \item Identify open ports and running services using tools like Nmap.
+    \item Analyze IP scans for revealing device type, version, consfigurations. \\ Databases such as Censys, Shodan, or Spiderfoot can be used to retrive these kinds of information.
+\end{itemize}
+
+\subsection{Mentions}
+\begin{itemize}
+    \item IP addresses and network object could be finded in social media, paste sites or forums as conseguenze of security incidents.
+    \item Some example are pastebin, TweekDesk (Obsolete), RaidForums. And can be interrogated with simple google dorks (e.g. \texttt{site:pastebin.com "polimi.it"}).
+\end{itemize}
+
+\subsection{Threat Intelligence Feeds}
+\begin{itemize}
+    \item Uthreat intelligence databases often mark suspicious IPs linked to malicious activity
+    \item e.g. virusTotal, alienvault OTX, ...
+\end{itemize}
+
+\subsection{IP history}
+\begin{itemize}
+    \item Previous association with different (suspicious) domains
+    \item e.g. viewDNS.info, RiskIQ
+\end{itemize}
+
+\section{Social Media Forensics}
+\subsection{Data Collection}
+\begin{itemize}
+    \item Extracts data from public profiles, posts, and metadata.
+    \item Assesses behavior, timing of activities, and account associations.
+\end{itemize}
+
+\subsection{User Profiling}
+\begin{itemize}
+    \item Cross-correlates accounts and analyzes metadata.
+    \item Employs network graphs for interaction analysis (e.g., Maltego, Spiderfoot).
+    \item Performs geospatial analysis using embedded location data (e.g., EXIF, GPS).
+\end{itemize}
+
+\subsection{Content Analysis}
+\begin{itemize}
+    \item Identifies recurring trends, user emotions, and motivations.
+    \item Analyzes images and videos with reverse search and facial recognition tools.
+\end{itemize}
+
+\subsection{Monitoring and Verification}
+\begin{itemize}
+    \item Tracks hashtags, keywords, and fake profiles.
+    \item Detects impersonations through behavioral similarities.
+\end{itemize}
